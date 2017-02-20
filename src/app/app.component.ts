@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { HomePage } from '../pages/home/home';
+import { FavouritesPage } from '../pages/favourites/favourites';
+import { LibraryPage } from '../pages/library/library';
+import { QuotePage } from '../pages/quote/quote';
+import { QuotesPage } from '../pages/quotes/quotes';
+import { SettingsPage } from '../pages/settings/settings';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = HomePage;
+  rootPage = FavouritesPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
