@@ -9,7 +9,11 @@
   <ion-navbar>
     <ion-title>{{ quoteGroup?.category | uppercase }}</ion-title>
   </ion-navbar>
+
+  
 </ion-header>
+
+
 
 
 <ion-content padding>
@@ -24,7 +28,8 @@
 		</ion-card-content>
 		<ion-row>
 			<ion-col text-right>
-				<button ion-button clear small (click)="addToFavourite(quote)">Favourite</button>
+				<button *ngIf="!isFavourite(quote)" ion-button clear small (click)="addToFavourites(quote)">Favourite</button>
+				<button *ngIf="isFavourite(quote)" ion-button clear small color="danger" (click)="removeFromFavourites(quote)">Unfavourite</button>
 			</ion-col>
 		</ion-row>
 	</ion-card>
