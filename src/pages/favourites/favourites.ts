@@ -3,6 +3,7 @@ import { NavController, NavParams, ModalController, MenuController } from 'ionic
 import { Quote } from '../../data/quote.interface';
 import { QuotesService } from '../../services/quotes';
 import { QuotePage } from '../quote/quote';
+import { SettingsService } from '../../services/settings';
 
 /*
   Generated class for the Favourites page.
@@ -20,7 +21,8 @@ export class FavouritesPage {
   			  public navParams: NavParams,
   			  public quotesService: QuotesService,
   			  public modalCtrl: ModalController,
-          public menuCtrl: MenuController) {}
+          public menuCtrl: MenuController, 
+          public settingsService: SettingsService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FavouritesPage');
@@ -53,6 +55,10 @@ export class FavouritesPage {
 
   openMenu(){
     this.menuCtrl.open();
+  }
+
+  getBackground(){
+    return this.settingsService.isBooleanSettingChecked("altBackground")?"altQuoteBackground":"quoteBackground"
   }
 
 }

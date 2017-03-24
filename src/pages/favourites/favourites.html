@@ -22,7 +22,7 @@
 	
 	<ion-list>
 		<ion-item-sliding *ngFor="let quote of quotes">
-			<ion-item  (click)="viewQuote(quote)">
+			<ion-item  (click)="viewQuote(quote)" [color]="getBackground()">
 				<h2>{{quote.person}}</h2>
 				<p>{{quote.text}}</p>
 			</ion-item>
